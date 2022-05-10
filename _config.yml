@@ -7,7 +7,7 @@
 # =======================================#
 # -----------BASE SETTINGS---------------#
 #========================================#
-plugins: [jekyll-scholar]
+
 title: RuiZhang's Blog 
 email: 
 description: a minimalistic jekyll theme for academics
