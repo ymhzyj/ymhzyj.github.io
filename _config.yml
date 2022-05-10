@@ -82,7 +82,7 @@ help_tips: false                                    # options: true, false  | us
 # =======================================#
 # -----------BUILD SETTINGS--------------#
 #========================================#
-theme: jekyll-theme-tactile
+theme: 
 markdown: kramdown
 
 kramdown:
