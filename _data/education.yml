@@ -1,6 +1,20 @@
-- School: Princeton
-  Degree: 
-  Program: School of Public and International Affairs
-  Start Date: 
-  End Date: 
-  Icon: /assets/img/icons/2x/princeton-crop.png      # Make this icon small, think 30px/30px
+- School: SiChuan University
+  Degree: Phd Student
+  Program: School of Cyber Science and Engineering
+  Start Date: 2021-09
+  End Date: Current
+  Icon: /assets/img/icons/1x/sichuan.png      # Make this icon small, think 30px/30px
+
+- School: University of the Chinese Academy of Sciences
+  Degree: Master of Engineering
+  Program: Institute of Optics and Electronics
+  Start Date: 2018-09
+  End Date: 2021-06
+  Icon: /assets/img/icons/1x/ucas.png      # Make this icon small, think 30px/30px
+
+- School: Inner Mongolia University
+  Degree: Bachelor of Engineering
+  Program: School of Electronic Information Engineering
+  Start Date: 2018-09
+  End Date: 2021-06
+  Icon: /assets/img/icons/1x/imu.png      # Make this icon small, think 30px/30px
