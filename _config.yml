@@ -7,7 +7,7 @@
 # =======================================#
 # -----------BASE SETTINGS---------------#
 #========================================#
-
+gems: [jekyll-scholar]
 title: RuiZhang's Blog 
 email: 
 description: a minimalistic jekyll theme for academics
@@ -30,7 +30,7 @@ stackoverflow:
 website: 
 codepen: 
 medium: 
-email: 
+email: zhangrui1997@stu.scu.edu.cn
 keybase: 
 pgp: 
 ctftime: 
