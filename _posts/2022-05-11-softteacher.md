@@ -9,7 +9,7 @@ image: assets/img/posts/softteacher.png # for local images, place in /assets/img
 caption:
 last-updated: 2022-05-11 09:01:21 -0400
 categories: detection distillation
-tag: distillation
+tag: ipsum
 author: Rui Zhang
 card: card-1
 ---
