@@ -5,7 +5,7 @@ description: "阅读笔记"
 date:   2022-05-11 09:01:21 -0400
 type: card-img-top
 categories: latin text
-image: http://placehold.it/750X300?text=Header+Image # for local images, place in /assets/img/posts/
+image: assets/img/posts/softteacher.png # for local images, place in /assets/img/posts/
 caption:
 last-updated: 2022-05-11 09:01:21 -0400
 categories: detection distillation
