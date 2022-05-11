@@ -1,16 +1,16 @@
 ---
 layout: post
-title:  "End-to-End Semi-Supervised Object Detection with Soft Teacher"
-description: "阅读笔记"
-date:   2022-05-11 09:01:21 -0400
+title:  "Lorem Ipsum"
+description: "A Description"
+date:   2020-10-26 20:01:21 -0400
 type: card-img-top
 categories: latin text
-image: assets/img/posts/softteacher.png # for local images, place in /assets/img/posts/
+image: http://placehold.it/750X300?text=Header+Image # for local images, place in /assets/img/posts/
 caption:
-last-updated: 2022-05-11 09:01:21 -0400
-categories: detection distillation
+last-updated: 2020-10-26 20:01:21 -0400
+categories: post ipsum
 tag: ipsum
-author: Rui Zhang
+author: Tyler Butler
 card: card-1
 ---
 [End-to-End Semi-Supervised Object Detection with Soft Teacher](https://openaccess.thecvf.com/content/ICCV2021/html/Xu_End-to-End_Semi-Supervised_Object_Detection_With_Soft_Teacher_ICCV_2021_paper.html)的相关内容，文章发表在ICCV2021，下面是本人对于文章的总结：
