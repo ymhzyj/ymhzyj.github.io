@@ -49,13 +49,13 @@ ui_theme: abyss                                 # Create your own theme by setti
 tags:  post jekyll styleguide ipsum
 twitter-widget: false # true,false                  # Used to show your twitter timeline on blog home page
 
-comments: false                                     # Used to enable comments on blog posts
-gitalk_client_id:             
-gitalk_client_secret:    
-gitalk_repo:
-gitalk_owner: 
-gitalk_admin: 
-gitalk_distraction_mode: false
+comments: true                                     # Used to enable comments on blog posts
+gitalk_client_id: 981267f5debd8a737d19          
+gitalk_client_secret: ${{ secrets.GH_TALK}}   
+gitalk_repo: ymhzyj.github.io
+gitalk_owner: ymhzyj
+gitalk_admin: ymhzyj
+gitalk_distraction_mode: true
 
 # =======================================#
 # -----------THEME SETTINGS--------------#
