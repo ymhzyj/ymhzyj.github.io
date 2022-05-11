@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Lorem Ipsum"
+title:  "End-to-End Semi-Supervised Object Detection with Soft Teacher"
 description: "A Description"
 date:   2020-10-26 20:01:21 -0400
 type: card-img-top
