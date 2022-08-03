@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.2">Jekyll</generator><link href="https://ymhzyj.github.io//feed.xml" rel="self" type="application/atom+xml" /><link href="https://ymhzyj.github.io//" rel="alternate" type="text/html" /><updated>2022-08-03T18:13:44+00:00</updated><id>https://ymhzyj.github.io//feed.xml</id><title type="html">RuiZhang’s Blog</title><subtitle>a minimalistic jekyll theme for academics</subtitle><author><name>Rui Zhang</name></author><entry><title type="html">Soft teacher</title><link href="https://ymhzyj.github.io//post/ipsum/2022/05/01/softteacher.html" rel="alternate" type="text/html" title="Soft teacher" /><published>2022-05-01T00:00:00+00:00</published><updated>2022-05-01T00:00:00+00:00</updated><id>https://ymhzyj.github.io//post/ipsum/2022/05/01/softteacher</id><content type="html" xml:base="https://ymhzyj.github.io//post/ipsum/2022/05/01/softteacher.html"><![CDATA[<p><a href="https://openaccess.thecvf.com/content/ICCV2021/html/Xu_End-to-End_Semi-Supervised_Object_Detection_With_Soft_Teacher_ICCV_2021_paper.html">End-to-End Semi-Supervised Object Detection with Soft Teacher</a>的相关内容，文章发表在ICCV2021，下面是本人对于文章的总结：</p>
+<h1 id="文章摘要">文章摘要</h1>
+<p>Soft-Teacher提出了一种端到端的半监督目标检测算法，能够逐步提升伪标签的质量，
+从而也让整个训练过程受益。算法在目标检测和实例分割任务上都取得了最高的效果，真的
+完全监督任务也有较好的精度提升效果。代码在<a href="https://github.com/microsoft/SoftTeacher">github</a>，提供了基于 mmdetection 实现的目标检测代码。</p>
+<h1 id="引言">引言</h1>
+<p>获取有效的标注是深度学习技术发展的瓶颈，因此才需要半监督和自监督技术来利用无
+标注数据。针对目标检测任务，基于伪标签的半监督目标检测算法是一类主流的半监督学习
+算法。过去基于伪标签的算法通常需要多个阶段的训练过程，第一阶段利用小规模有标签数
+据初始化检测器为无标签数据标注伪标签，第二阶段利用伪标签重新训练模型。这类方法的
+性能受到初始化过程检测模型性能的显著影响，伪标签质量不佳的情况下，检测性能也会降
+低。在一部分工作是希望能够尽量降低错误伪标签的影响，增强对于噪声标签的鲁棒性。
+这篇文章为了解决伪标注和两阶段训练过程繁琐的问题，提出了端到端的基于伪标签的
+半监督目标检测框架。一个训练的批里包含指定比例的有标签和无标签的数据，同时使用师
+生模型进行训练。学生模型负责训练检测任务，教师模型负责更新伪标签，其参数采用学生
+模型的指数滑动平均，两个模型相互促进，逐步提升检测性能。并且教师模型不是直接提供
+伪标签，而是对由学生网络提供的伪标注进行进一步评估，通过阈值判断候选框是前景/背景，
+提高伪标注的可信性，在本文中被称为 Soft teacher。此外针对伪标签还使用了边界框抖动的
+方法，首先将学生网络提供的边界框进行随机便宜，然后将偏移的边界框根据教师网络提供
+的定位回归，通过测量回归的方差判断当前候选框的可靠性。</p>
+
+<h1 id="方法">方法</h1>
+<p><img src="assets/img/posts/softteacher.png#pic_center" alt="方法" /></p>
+
+<p>算法端到端训练整体流程如图 1 所示，分别包括教师模型和学生模型。学生模型由有标
+注数据和伪标注数据监督，使用目标检测的损失函数。伪标注包含两组，分别用于训练分类
+和回归任务。教师模型是学生模型的指数滑动平均。
+整体的损失函数包括有监督和无监督损失：</p>
+
+\[\begin{aligned}
+L=L_{s}+{\alpha} L_{\mu}
+\end{aligned}\]
+
+<p>其中\(L_s\)，\(L_u\)分别表示有监督和无监督，\(\alpha\)是超参数，两个损失函数分别针对有标注数据和无标
+注数据，均由分类损失和回归损失组合而来。</p>
+
+<p>模型训练的精度与伪标签质量有关，通过使用高的前景分数过滤学生网络生成的候选框，
+可以有效提升性能，但是由于分数过高的限制过于严格，也会严重影响算法的召回率。为了
+解决这一问题使用了 Soft Teacher 策略，针对无标注图像提出了带有可信权重的分类损失:</p>
+
+\[\begin{aligned}
+ L_{u}^ {cls}=\frac{1}{N_ {b}^{fb}}{\sum _ {i=1}^ {N_{b}^{fb}}l_ {cls}(b_ {i}^ {fg},g_ {cls})+\sum _ {j=1}^ {N_{b}^{bg}}w_ {j}l_ {cls}(b_{j}^ {bg},g_ {cls})}
+ \end{aligned}\]
+
+\[\begin{aligned}
+ w_ {j}  = \frac {r_ {j}}{\sum _ {k=1}^ {N_{b}^{bg}}{r_k}}
+ \end{aligned}\]
+
+<p>\(b_{i}^{fg}\)是被学生网络分为前景的候选框，\(b_{j}^{bg}\)是被分为背景的候选框，\(g_{cls}\)是教师网络生成的伪标注，用于判断是否属于前景和背景，\(l_{cls}\)是一个二分类的损失区分前景背景，\(r_{j}\)是第\(j\)背景候选框的可靠性分数，\(N_{b}^{bg}\)和\(N_{b}^{fg}\)表示对应候选框的数量。可靠性分数可以通过教师网络的输出提供、或者是学生网络输出的分数，也可以通过对比学生网络和教师网络的差异或者 IoU 计算。这部分的损失函数是一种模仿 <a href="https://arxiv.org/abs/2001.07685">Fixmatch</a>的一致性对比损失，由于教师网络和学生网络输入了不同数据增强下的样本，导致了二者输出有差异，一般增强更弱的教师网络的输出会更准确，而增强更多的学生网络在增强鲁棒性的同时可以靠近教师网络的准确性。</p>
+
+<p>由于分类任务和定位不是严格正相关的，上述方法只是提高了分类的准确性，但是没有提供更好的定位性能。为了提升检测框的精度，将伪标签的前景分数大于 0.5 的目标框向四
+周随机抖动，再通过教师网络预测这些抖动后的目标框区域，将重新预测的结果和抖动的结果对比，如果两个之间的差异越小，说明这个候选框越可靠，这个损失被定义为：</p>
+
+\[\begin{aligned}
+L_{u}^{reg}={\frac{1}{N_{b}^{fg}}}{\sum _ {i=1}^ {N_{b}^{fg}}{l_{reg}(b_{i}^{fg},g_{reg})}}
+\end{aligned}\]
+
+<h1 id="实验验证">实验验证</h1>
+<p>半监督实验的设置包括两种：</p>
+
+<p>部分标签数据：使用1%、5%和 10%的数据作为有标注数据，其余作为无标注数据进行训练</p>
+
+<p>全部标签数据：使用官方提供的完整训练集和无标注完整训练集进行测试。
+实验测试了不同的数据增强算法、检测算法结构、以及对比多阶段的结果，均验证了有
+效性。</p>]]></content><author><name>Rui Zhang</name></author><category term="post" /><category term="ipsum" /><category term="soft teacher" /><summary type="html"><![CDATA[论文阅读笔记]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://placehold.it/750X300?text=Header+Image" /><media:content medium="image" url="http://placehold.it/750X300?text=Header+Image" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--
+  The above 2 meta tags *must* come first in the <head>
+  to consistently ensure proper document rendering.
+  Any other head element should come *after* these tags.
+ -->
+<title>RuiZhang's Blog</title>
+<!-- Set the base URL for all relative URLs within the document -->
+<base href="https://ymhzyj.github.io/">
+
+<!--
+  Allows control over where resources are loaded from.
+  Place as early in the <head> as possible, as the tag  
+  only applies to resources that are declared after it.
+-->
+
+<!-- Short description of the document (limit to 150 characters) -->
+<!-- This content *may* be used as a part of search engine results. -->
+<meta name="description" content="a minimalistic jekyll theme for academics">
+
+<!-- Control the behavior of search engine crawling and indexing -->
+<meta name="robots" content="index,follow"><!-- All Search Engines -->
+<meta name="googlebot" content="index,follow"><!-- Google Specific -->
+
+<!-- Verify website ownership -->
+<meta name="google-site-verification" content=""><!-- Google Search Console -->
+<meta name="yandex-verification" content=""><!-- Yandex Webmasters -->
+<meta name="msvalidate.01" content=""><!-- Bing Webmaster Center -->
+<meta name="alexaVerifyID" content=""><!-- Alexa Console -->
+<meta name="p:domain_verify" content=""><!-- Pinterest Console-->
+<meta name="norton-safeweb-site-verification" content=""><!-- Norton Safe Web -->
+
+<!-- Allows control over how referrer information is passed -->
+<meta name="referrer" content="no-referrer">
+
+<!-- Disable automatic detection and formatting of possible phone numbers -->
+<meta name="format-detection" content="telephone=true">
+
+<!-- Completely opt out of DNS prefetching by setting to "off" -->
+<meta http-equiv="x-dns-prefetch-control" content="on">
+
+<!-- Geo tags -->
+<!-- meta name="ICBM" content="latitude, longitude"-->
+<!-- meta name="geo.position" content="latitude;longitude"-->
+<!-- meta name="geo.region" content="country[-state]"><Country code (ISO 3166-1): mandatory, state code (ISO 3166-2): optional; eg. content="US" / content="US-NY" -->
+<!-- meta name="geo.placename" content="city/town"><eg. content="New York City" -->
+
+<!-- Link to an external CSS file -->
+<link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Courgette&family=Lobster&family=Pacifico&family=Yellowtail&family=Noto+Sans+JP:wght@400;900&family=Poppins:wght@500&family=Righteous&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/css/main.css">
+<!-- BootStrap CDN --> 
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<script src="https://kit.fontawesome.com/0618a155b4.js" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script> 
+
+<!--  GIT TALK CDN  for comment system -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+<script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script> 
+
+
+<!-- Provides information about an author or another person -->
+<link rel="me" href="mailto:zhangrui1997@stu.scu.edu.cn">
+<link rel="me" href="sms:+">
+
+<!-- Open Search -->
+<!-- link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Search Title" -->
+
+<!-- Feeds -->
+<!-- link rel="alternate" href="https://feeds.feedburner.com/example" type="application/rss+xml" title="RSS" -->
+<!-- link rel="alternate" href="https://example.com/feed.atom" type="application/atom+xml" title="Atom 0.3" -->
+
+<!-- For IE 10 and below -->
+<!-- Place favicon.ico in the root directory - no tag necessary -->
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/icons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/favicon-16x16.png">
+<link rel="mask-icon" href="/assets/img/icons/safari-pinned-tab.svg" color="#5bbad5">
+
+<meta property="fb:app_id" content="">
+<meta property="og:url" content="https://ymhzyj.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="RuiZhang's Blog, a minimalistic jekyll theme for academics">
+<meta property="og:image" content="/assets/img/dumbarton.png">
+<meta property="og:image:alt" content="A minimalistic jekyll theme for academic">
+<meta property="og:description" content="a minimalistic jekyll theme for academics">
+<meta property="og:site_name" content="RuiZhang's Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="Rui Zhang">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@">
+<meta name="twitter:creator" content="@">
+<meta name="twitter:url" content="https://ymhzyj.github.io/">
+<meta name="twitter:title" content="a minimalistic jekyll theme for academics">
+<meta name="twitter:description" content="a minimalistic jekyll theme for academics">
+<meta name="twitter:image" content="/assets/img/dumbarton.png">
+<meta name="twitter:image:alt" content="A minimalistic jekyll theme for academic">
+
+<!-- Used for adding in-document CSS -->
+
+
+
+<!-- JavaScript & No-JavaScript tags -->
+
+<link rel="stylesheet" href="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/styles/monokai-sublime.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/highlight.min.js"></script>
+<!-- and it's easy to individually load additional languages -->
+<script src="https://unpkg.com/@highlightjs/cdn-assets@10.5.0/languages/go.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<!--
+<script>
+    $(document).ready(function() {
+        $(".toast").toast('show');
+    });
+</script> -->
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', ');
+</script>
+
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<noscript>
+  <!-- No JS alternative -->
+</noscript>
+  <body style="background-color:;">
+    
+<nav class="navbar navbar-expand-lg glowing-border mb-4" style="font-family:Poppins;background-color:#10292e;">
+  <a class="navbar-brand" href="/index.html"><h4 style="font-family:Noto Sans JP;font-weight:600;color:#149f98;">RuiZhang's Blog</h4></a>
+  <button class="navbar-toggler text-black" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <i class="fas fa-caret-down"></i>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+        
+              <li class="nav-item">
+                  <a href="about.html" class="nav-link" style="font-family:Poppins;color:#149f98;">About</a>
+              </li>
+        
+              <li class="nav-item">
+                  <a href="publications.html" class="nav-link" style="font-family:Poppins;color:#149f98;">Publications</a>
+              </li>
+        
+              <li class="nav-item">
+                  <a href="blog.html" class="nav-link" style="font-family:Poppins;color:#149f98;">Blog</a>
+              </li>
+        
+              <li class="nav-item">
+                  <a href="/assets/pdf/vitae.pdf" class="nav-link" style="font-family:Poppins;color:#149f98;">Vitae</a>
+              </li>
+        
+              <li class="nav-item">
+                  <a href="contact.html" class="nav-link" style="font-family:Poppins;color:#149f98;">Contact</a>
+              </li>
+        
+    </ul>
+    <ul class="navbar-nav  justify-content-end">
+      <li class="nav-item">
+        
+<!-- Displays Social Media Icons based on _config.yml settings -->
+<span style="color:#CCCCCC;">
+    <i> &nbsp;&nbsp; </i>
+    
+    
+        <a href="https://github.com/ymhzyj">
+        <span style="color: #CCCCCC;">
+            <i class="fab fa-github-square fa-lg"></i></a>
+        </span>
+    
+    
+    
+    
+    
+     
+    <i> &nbsp;&nbsp; </i>
+</span>
+
+      </li>
+    </ul>
+  </div>
+</nav>
+
+    <div class="dumbarton-spacer-sm"></div>
+    <div class="container">
+      
+
+<!--  HELP TIPS SECTION  -->
+<!-- used only for develop mode, disable these in _config.yml with `help_tips: false` -->
+
+
+<!-- ABOUT ME SECTION -->
+<div class="card mx-auto border-0" style="position:relative;background-color:;">
+  <div class="row">
+    <div class="col-md-4">
+      
+        <img src="/assets/img/avatar/cropped.png" class="img-thumbnail float-left animate__animated animate__fadeInLeft shadow bg-white rounded" alt="...">
+      
+    </div>
+    <!-- EDUCATION SECTION -->
+    <div class="col-md-8">
+      
+      <div class="card-body animate__animated animate__fadeInRight" style="color:;">
+      
+        <p style="color:;"><h3 id="hi-im-zhang-rui-">Hi, I’m Zhang Rui 👋</h3>
+
+<p>Ph.D. Student</p>
+
+<p>SiChuan University</p>
+
+<p>zhangrui1997[at]stu.scu.edu.cn</p>
+
+<p>I’m currently a Phd Student in SiChuan University, China. I obtained my M.E. degree from the Institute of Optics and Electronics，University of Chinese Academy of Sciences in June,2021.My current research interests are in deepfake detetction, image forgery detection.</p>
+
+<p><a href="/contact.html" class="highlighted">Contact Me</a></p>
+<p>
+        
+           
+  <h5 class="card-title" style="font-family:Noto Sans JP;font-size:18px;color:;">Education & Certifications</h5>
+  <ul class="list-unstyled">
+  
+    <li class="media">
+      <img src="/assets/img/icons/1x/sichuan.png" class="mr-3" alt="...">
+      <div class="media-body">
+        <h5 style="font-family:Noto Sans JP;font-size:18px;color:;">SiChuan University</h5>
+        <p style="font-family:Noto Sans JP;font-size:15px;color:;"><i>School of Cyber Science and Engineering</i></p>
+        
+          <p>Phd Student</p>
+        
+      </div>
+    </li>
+    
+    <li class="media">
+      <img src="/assets/img/icons/1x/ucas.png" class="mr-3" alt="...">
+      <div class="media-body">
+        <h5 style="font-family:Noto Sans JP;font-size:18px;color:;">University of the Chinese Academy of Sciences</h5>
+        <p style="font-family:Noto Sans JP;font-size:15px;color:;"><i>Institute of Optics and Electronics</i></p>
+        
+          <p>Master of Engineering</p>
+        
+      </div>
+    </li>
+    
+    <li class="media">
+      <img src="/assets/img/icons/1x/imu.png" class="mr-3" alt="...">
+      <div class="media-body">
+        <h5 style="font-family:Noto Sans JP;font-size:18px;color:;">Inner Mongolia University</h5>
+        <p style="font-family:Noto Sans JP;font-size:15px;color:;"><i>School of Electronic Information Engineering</i></p>
+        
+          <p>Bachelor of Engineering</p>
+        
+      </div>
+    </li>
+    
+  </ul>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- style="font-family:Poppins;background-color:#10292e; -->
+
+<!-- HOME HIGHLIGHTS SECTION --> 
+
+<div class="card mx-auto animate__animated animate__slideInUp animate__delay-1s glowing-border" style="max-width: 100%;">
+
+  <div class="card-header" style="background-color:#10292e;">
+    <ul class="nav nav-tabs card-header-tabs" id="test-list" role="tablist">
+      
+        
+          <li class="nav-item">
+            <a class="nav-link shadow-none" id="" href="#publications" role="tab" aria-controls="publications" aria-selected="true" style="font-family:Poppins;color:#149f98;"> Publications</a>
+          </li>
+        
+      
+        
+          <li class="nav-item">
+              <a class="nav-link" id="" href="#projects" role="tab" aria-controls="projects" aria-selected="true" style="font-family:Poppins;color:#149f98;"> Projects</a>
+          </li>
+        
+      
+    </ul>
+  </div>
+  <div class="card-body">          
+      <div class="tab-content mt-3">
+        
+          
+            
+              <div class="tab-pane active overflow-auto" id="publications" role="tabpanel">
+                <p><i>My selected publications</i></p>
+                <p class="card-text"><ol class="bibliography"><li><div class="row">
+  <div id="zhang2020remote" class="col-sm-8">
+    
+      <div class="title font-weight-bold">Remote sensing image scene classification with noisy label distillation</div>
+      <div class="author">
+        
+          
+            
+              
+                
+                  Zhang, Rui,
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  Chen, Zhenghao,
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  Zhang, Sanxing,
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  Song, Fei,
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  Zhang, Gang,
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  Zhou, Quancheng,
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  and Lei, Tao
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>Remote Sensing</em>
+      
+      
+        2020
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+      <a href="https://www.mdpi.com/2072-4292/12/15/2376" role="button" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+    
+    
+      
+      <a href="/assets/pdf/remotesensing-12-02376.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf"></i></a>
+      
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+  </div>
+</div></li>
+<li><div class="row">
+  <div id="chen2020digging" class="col-sm-8">
+    
+      <div class="title font-weight-bold">Digging into pseudo label: a low-budget approach for semi-supervised semantic segmentation</div>
+      <div class="author">
+        
+          
+            
+              
+                
+                  Chen, Zhenghao,
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  Zhang, Rui,
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  Zhang, Gang,
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  Ma, Zhenhuan,
+                
+              
+            
+          
+        
+          
+            
+              
+                
+                  and Lei, Tao
+                
+              
+            
+          
+        
+      </div>
+
+      <div class="periodical">
+      
+        <em>IEEE Access</em>
+      
+      
+        2020
+      
+      </div>
+    
+
+    <div class="links">
+    
+    
+    
+      <a href="https://ieeexplore.ieee.org/document/9003388" role="button" target="_blank"><i class="fas fa-external-link-alt"></i></a>
+    
+    
+      
+      <a href="/assets/pdf/Digging_Into_Pseudo_Label_A_Low-Budget_Approach_for_Semi-Supervised_Semantic_Segmentation" class="btn btn-sm z-depth-0" role="button" target="_blank"><i class="fas fa-file-pdf"></i></a>
+      
+    
+    
+    
+    
+    
+    
+    
+    </div>
+
+    <!-- Hidden abstract block -->
+    
+  </div>
+</div></li></ol></p>
+              </div>
+            
+          
+        
+            
+            
+              <div class="tab-pane overflow-auto" id="projects" role="tabpanel" aria-labelledby="projects-tab">  
+                <p><i>Some codes.</i></p>
+                  
+                  <div class="media mt-2">
+                    <a href="https://github.com/ymhzyj/Remote-Sensing-Image-Scene-Classification-with-Noisy-Label-Distillation-NLD"><img src="assets/img/icons/nld.png" class="mr-3 mb-2 img-thumbnail border-0" alt="..."></a>
+                    <div class="media-body">
+                      <h5 class="mt-0"><a href="https://github.com/ymhzyj/Remote-Sensing-Image-Scene-Classification-with-Noisy-Label-Distillation-NLD" class="highlighted">NLD</a></h5>
+                      paper code "Remote Sensing Image Scene Classification with Noisy Label Distillation"
+
+                      
+                        <h6><mark><u>Technologies</u></mark></h6>
+                        
+                        <span class="badge badge-secondary mr-1" style="background-color:Black;">python</span>
+                        
+                        <span class="badge badge-secondary mr-1" style="background-color:Black;">pytorch</span>
+                        
+                      
+                    </div>
+                  </div>
+                  
+                </div>        
+              </div>
+            
+          
+        
+      </div>
+  </div>
+</div>
+
+
+
+<!-- ANIMATE.JS ANIMATE LIBRARY
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha512-z4OUqw38qNLpn1libAN9BsoDx6nbNFio5lA6CuTp9NlK83b89hgyCVq+N5FdBJptINztxn1Z3SaKSKUS5UP60Q==" crossorigin="anonymous"></script>
+-->
+
+
+<!--JS FUNCTION FOR RECENT WORK SECTION -->
+<script>
+    $('#test-list a').on('click', function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+    })
+</script> 
+
+<!-- OPTIONAL TOAST JS FUNCTION-->
+<script>
+    $(document).ready(function() {
+        $(".toast").toast("show");
+    });
+</script>
+
+
+<script>
+$('body').scrollspy({ target: '#list-example' })
+</script>
+
+<script>
+$('.collapse').collapse()
+</script>
+
+<script>
+$('.show').show()
+</script>
+
+    </div>
+    <div class="dumbarton-spacer"></div>
+    <div class="navbar navbar-default navbar-fixed-bottom">
+  <div class="container">
+    <p class="navbar-text pull-left">© 2020 - Theme Built By Tyler Butler, See it on
+        <a href="https://github.com/tcbutler320/Jekyll-Theme-Dumbarton" target="_blank" >GitHub</a>
+    </p>
+    <p class="navbar-text pull-right">
+            <!-- Displays Social Media Icons based on _config.yml settings -->
+
+<span style="color: Black;">
+     
+    
+        <a href="https://github.com/ymhzyj">
+        <span style="color: black;">
+            <i class="fab fa-github-square fa-lg"></i></a>
+        </span>
+    
+    
+    
+    
+    
+     
+    <i> &nbsp;&nbsp; </i>
+</span>
+
+    </p>
+  </div>
+</div> 
+
+<script>
+  $(function () {
+    $('[data-toggle="popover"]').popover()
+  })
+</script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<span id="busuanzi_container_site_uv">
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+</span>
+
+
+  </body>
+</html>
